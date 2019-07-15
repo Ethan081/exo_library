@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block title %}Show Auteur{% endblock %}
+    {% block content %}
+        <main>
+            <section class="section">
+                <div class="card">
+                    <h1>Nom : {{ author.getLastName() }}</h1>
+                    <h2>Prenom : {{ author.getFirstName() }}</h2>
+                    <h3>Date de Naissance : {{ author.getBirthdate()|date('d-m-Y') }}</h3>
+                    <p>Biographie :<br>{{ author.getBio() }}</p>
+                </div>
+            </section>
+        </main>
+    {% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block title %}Show Livre{% endblock %}
+    {% block content %}
+        <main>
+            <section class="section">
+                <div class="card">
+                    <h1>Titre : {{ book.getTitle() }}</h1>
+                    <h2>Genre : {{ book.getGenre() }}</h2>
+                    <h3>Nombre de pages : {{ book.getNumberOfPages()}}</h3>
+                    <p>Resumer :<br>{{ book.getSummary() }}</p>
+                </div>
+            </section>
+        </main>
+    {% endblock %}

@@ -1,0 +1,37 @@
+/*fonts*/
+/*font-family: 'Roboto', sans-serif;*/
+/*font-family: 'Open Sans', sans-serif;*/
+/*-----------------------------------------------------------------------------------------*/
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+.section{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    background :floralwhite;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    margin: 0 auto;
+}
+.card{
+    background: #fff;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    cursor: pointer;
+    background :whitesmoke;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px;
+}
+h1,h2{
+    font-family: 'Roboto', sans-serif;
+}

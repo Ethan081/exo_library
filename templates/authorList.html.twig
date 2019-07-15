@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block title %}List Auteur{% endblock %}
+   {% block content %}
+        <main>
+            <section class="section">
+                {% for element in authors %}
+                    <div class="card">
+                        <h1>Nom : {{ element.getLastName() }}</h1>
+                        <h2>Prenom : {{ element.getFirstName() }}</h2>
+                        <h3>Date de Naissance : {{ element.getBirthdate()|date('d-m-Y') }}</h3>
+                        <p>Biographie :<br>{{ element.getBio() }}</p>
+                    </div>
+                {% endfor %}
+            </section>
+        </main>
+    {% endblock %}
+

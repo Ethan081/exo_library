@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block title %}List de Livres{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="section">
+            {% for element in books %}
+                <div class="card">
+                    <h1>Titre : {{ element.getTitle() }}</h1>
+                    <h2>Genre : {{ element.getGenre() }}</h2>
+                    <h3>Nombre de pages : {{ element.getNumberOfPages()}}</h3>
+                    <p>Resumer :<br>{{ element.getSummary() }}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
