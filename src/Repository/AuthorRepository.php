@@ -19,32 +19,39 @@ class AuthorRepository extends ServiceEntityRepository
         parent::__construct($registry, Author::class);
     }
 
-    // /**
-    //  * @return Author[] Returns an array of Author objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findByLastName()
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $lastName = 'Levy';
 
-    /*
-    public function findOneBySomeField($value): ?Author
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $qb = $this->createQueryBuilder('a');
+        $query = $qb->select('a')
+            ->where('a.last_name = :lastName')
+            ->setParameter('lastName', $lastName)
+            ->getQuery();
+        $resultats = $query->getArrayResult();
+        return $resultats;
     }
-    */
+    //methode pour trouver des auteurs en fonction d un mot de leur biographie
+    // creer la methode qui fait la requete SQL
+    //creer la route(dans la classe de controller)
+    //creer la methode de controler liee a a route
+    //appeler la methode du repository(celle qui fait la requete SQL)
+    //enregistrer les resultats de la requete SQL dans une variable
+    //afficher la variable.
+
+    public function findAuthorByBio($bio)
+    {
+//        $bio = 'Fils';
+
+        $qb = $this->createQueryBuilder('a');
+        $query = $qb->select('a')
+            ->where('a.bio LIKE :word')
+            ->setParameter('word','%'.$bio.'%')
+            ->getQuery();
+        $resultats = $query->getArrayResult();
+        return $resultats;
+    }
+
+
+
 }

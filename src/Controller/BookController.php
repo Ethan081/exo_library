@@ -48,7 +48,7 @@ class BookController extends AbstractController
     /**
      * @Route("/book/show/{id}", name="bookShow")
      */
-    public function bookshow(BookRepository $bookRepository, $id)
+    public function bookShow(BookRepository $bookRepository, $id)
     {
         $book = $bookRepository->find($id);
 
@@ -58,6 +58,19 @@ class BookController extends AbstractController
                 'book'=>$book
             ]);
 
+    }
+
+    /**
+     * @Route("/book/genre", name="bookGenre")
+     */
+    public function bookGenre(BookRepository $bookRepository)
+    {
+        $genre = $bookRepository->findByGenre();
+
+        return $this->render('bookGenre.html.twig',
+        [
+            'genre'=>$genre
+        ]);
     }
 
 

@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block title %}Auteur LastName{% endblock %}
+{% block content %}
+    <main>
+        <section class="section">
+            {% for element in authorlastName %}
+                <div class="card">
+                    <h1>Nom : {{ element.lastName }}</h1>
+                   <h2>Prenom : {{ element.firstName }}</h2>
+                    <h3>Date de Naissance : {{ element.birthdate|localizeddate('none', 'none', null, null, 'd MMMM Y') }}</h3>
+                    <p>Biographie :<br>{{ element.bio }}</p>
+                    <a href="{{ path('authorShow', {'id':element.id}) }}">Voir</a>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}

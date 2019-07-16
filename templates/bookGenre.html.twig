@@ -1,10 +1,9 @@
 {% extends "base.html.twig" %}
-{% block title %}List de Livres{% endblock %}
-
+{% block title %}Genre de Livres{% endblock %}
 {% block content %}
     <main>
         <section class="section">
-            {% for element in books %}
+            {% for element in genre %}
                 <div class="card">
                     <h1>Titre : {{ element.title }}</h1>
                     <h2>Genre : {{ element.genre }}</h2>

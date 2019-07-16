@@ -29,7 +29,7 @@ class Book
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $number_of_pages;
+    private $numberOfPages;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -67,12 +67,12 @@ class Book
 
     public function getNumberOfPages(): ?int
     {
-        return $this->number_of_pages;
+        return $this->numberOfPages;
     }
 
-    public function setNumberOfPages(?int $number_of_pages): self
+    public function setNumberOfPages(?int $numberOfPages): self
     {
-        $this->number_of_pages = $number_of_pages;
+        $this->numberOfPages = $numberOfPages;
 
         return $this;
     }
