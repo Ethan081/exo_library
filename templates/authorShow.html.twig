@@ -4,10 +4,10 @@
         <main>
             <section class="section">
                 <div class="card">
-                    <h1>Nom : {{ author.getLastName() }}</h1>
-                    <h2>Prenom : {{ author.getFirstName() }}</h2>
-                    <h3>Date de Naissance : {{ author.getBirthdate()|date('d-m-Y') }}</h3>
-                    <p>Biographie :<br>{{ author.getBio() }}</p>
+                    <h1>Nom : {{ author.lastName }}</h1>
+                    <h2>Prenom : {{ author.firstName }}</h2>
+                    <h3>Date de Naissance : {{ author.birthdate|date('d-m-Y') }}</h3>
+                    <p>Biographie :<br>{{ author.bio }}</p>
                 </div>
             </section>
         </main>

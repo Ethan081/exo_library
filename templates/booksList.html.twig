@@ -6,10 +6,10 @@
         <section class="section">
             {% for element in books %}
                 <div class="card">
-                    <h1>Titre : {{ element.getTitle() }}</h1>
-                    <h2>Genre : {{ element.getGenre() }}</h2>
-                    <h3>Nombre de pages : {{ element.getNumberOfPages()}}</h3>
-                    <p>Resumer :<br>{{ element.getSummary() }}</p>
+                    <h1>Titre : {{ element.title }}</h1>
+                    <h2>Genre : {{ element.genre }}</h2>
+                    <h3>Nombre de pages : {{ element.numberOfPages}}</h3>
+                    <p>Resumer :<br>{{ element.summary }}</p>
                 </div>
             {% endfor %}
         </section>
