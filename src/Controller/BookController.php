@@ -4,6 +4,7 @@
 namespace App\Controller;
 use App\Entity\Book;
 use App\Repository\BookRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -63,13 +64,14 @@ class BookController extends AbstractController
     /**
      * @Route("/book/genre", name="bookGenre")
      */
-    public function bookGenre(BookRepository $bookRepository)
+    public function bookGenre(BookRepository $bookRepository, Request $request)
     {
-        $genre = $bookRepository->findByGenre();
+        $genre = $request->query->get('genre');
+        $BookGenre = $bookRepository->findByGenre($genre);
 
         return $this->render('bookGenre.html.twig',
         [
-            'genre'=>$genre
+            'genre'=>$BookGenre
         ]);
     }
 

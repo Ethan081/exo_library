@@ -3,6 +3,19 @@
 
 {% block content %}
     <main>
+        <div class="titreSearch">
+            <div class="titre">
+                <h1>Les Livres</h1>
+            </div>
+            <div class="search">
+                <form action="{{ path('bookGenre') }}" method="get">
+                    <input type="text" name="genre">
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+
+
         <section class="section">
             {% for element in books %}
                 <div class="card">

@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="card">
+            <form action="#" method="post" class="form pure-form pure-form-stacked">
+                <label for="lastname" >Nom</label><br>
+                <input type="text" name="" id="lastname"><br>
+                <label for="firstname" >Prenom</label><br>
+                <input type="text" name="" id="firstname"><br>
+                <label for="mail" >Mail</label><br>
+                <input type="email" name="" id="mail"><br>
+                <input type="radio" name="radio" id="radio"> <label for="radio">Mr</label><br>
+                <input type="radio" name="radio" id="radio"> <label for="radio">Mme</label><br>
+                <label for="message">Message</label><br>
+                <textarea name="message" id="message" style="width:200px; height:200px;">
+            </textarea><br>
+                <br>
+                <button type="submit" class="pure-button pure-button-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

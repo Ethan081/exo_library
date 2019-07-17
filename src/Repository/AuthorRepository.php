@@ -31,6 +31,8 @@ class AuthorRepository extends ServiceEntityRepository
         $resultats = $query->getArrayResult();
         return $resultats;
     }
+
+
     //methode pour trouver des auteurs en fonction d un mot de leur biographie
     // creer la methode qui fait la requete SQL
     //creer la route(dans la classe de controller)
@@ -46,6 +48,7 @@ class AuthorRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('a');
         $query = $qb->select('a')
             ->where('a.bio LIKE :word')
+            //je securise ma requete avec la methode setParameter.
             ->setParameter('word','%'.$bio.'%')
             ->getQuery();
         $resultats = $query->getArrayResult();

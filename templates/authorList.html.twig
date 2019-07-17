@@ -2,6 +2,18 @@
 {% block title %}List Auteur{% endblock %}
    {% block content %}
         <main>
+            <div class="titreSearch">
+                <div class="titre">
+                    <h1>Les Auteurs</h1>
+                </div>
+                <div class="search pure-form ">
+                    <form action="{{ path('authorBio') }}" method="get">
+                        <input type="text" name="bio">
+                        <button type="submit" class="pure-button pure-button-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+
             <section class="section">
                 {% for element in authors %}
                     <div class="card">

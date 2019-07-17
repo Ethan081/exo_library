@@ -25,9 +25,9 @@ class BookRepository extends ServiceEntityRepository
      *
      * (requete test, car la méthode existe déjà dans le repo)
      */
-    public function findByGenre()
+    public function findByGenre($genre)
     {
-        $genre = 'Fiction';
+//        $genre = 'Fiction';
         // je récupère le query builder de Doctrine pour créer la requête
         $qb = $this->createQueryBuilder('b');
         // je viens sélectionner tous les éléments
@@ -37,10 +37,10 @@ class BookRepository extends ServiceEntityRepository
             // je lui demande de récupérer uniquement
             // les livres dont la colonne genre correspond
             // à la valeur de la variable $genre
-            ->where('b.genre = :genre')
+            ->where('b.genre LIKE :genre')
             // j'utilise les parametres pour sécuriser la variable
             // $genre et éviter les attaques
-            ->setParameter('genre', $genre)
+            ->setParameter('genre', '%'.$genre.'%')
             // je créé la requete SQL équivalente
             ->getQuery();
         // je récupère les résultats sous forme d'array
