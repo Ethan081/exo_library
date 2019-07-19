@@ -9,6 +9,13 @@ body{
     background-color: #f1f1f1;
 
 }
+a {
+    text-decoration: none;
+    color: blue;
+}
+a:hover{
+    color: deepskyblue;
+}
 .resp{
     width: 100%;
 }
@@ -77,9 +84,14 @@ h1,h2{
 .search{
     margin-left: 10px;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
 
 
-/*----------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------MEDIA-Q--------------------------------------------------------*/
 @media screen and (max-width: 640px) {
     .section{
         display: flex;
@@ -114,7 +126,7 @@ h1,h2{
         justify-content: space-around;
         width: 100%;
         height: 20px;
-        background-color: #aacd4e;
+
 
     }
     .navbar{
@@ -131,5 +143,8 @@ h1,h2{
     .search{
         display: none;
     }
+
+
+
 
 }

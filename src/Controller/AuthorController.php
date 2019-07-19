@@ -4,7 +4,9 @@
 namespace App\Controller;
 
 use App\Entity\Author;
+use App\Form\AuthorType;
 use App\Repository\AuthorRepository;
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -87,7 +89,59 @@ class AuthorController extends AbstractController
         ]
         );
     }
+    //je rajoute un auteur en base de donner
+    /**
+     * @Route("/author/insert", name="insertAuthor_page")
+     */
+    public function insertAuthor(EntityManagerInterface $entityManager)
+    {
+        $author = new Author();
+        $author->setFirstName('Nicolas');
+        $author->setLastName('Beuglet');
+        $author->setBirthdate(new \DateTime('1974-01-01'));
+        $author->setBio('Nicolas Beuglet est romancier et scénariste.
+        Il a été présentateur, rédacteur en chef et directeur artistique en télévision (M6).
+        En 2011, il a publié un premier roman, "Le premier crâne", sous le nom de Nicolas Sker.');
+
+        $entityManager->persist($author);
+        $entityManager->flush();
+
+        var_dump('C est dans la db');die;
 
 
+    }
 
+    //Suprimmee un Auteur
+    /**
+     * @Route("/author/{id}/delete", name="deleteAuthor_page")
+     */
+    public function deleteAuthor($id, AuthorRepository $authorRepository, EntityManagerInterface $entityManager)
+    {
+        $author = $authorRepository->find($id);
+
+        $entityManager->remove($author);
+        $entityManager->flush();
+
+        var_dump('l\'auteur n\'est plus dans la db.' );die;
+    }
+
+    //-----------------------------------------Je met a jour un Auteur----------------------------------------
+    /**
+     * @Route("author/{id}/update", name="updateAuthor_page")
+     */
+    public function updateAuthor($id, AuthorRepository $authorRepository, EntityManagerInterface $entityManager)
+    {
+        $author = $authorRepository->find($id);
+
+        $author->setLastName('Poquelin dit Moliere');
+        $author->setBio('Au tournant de l\'année 1643, Jean-Baptiste Poquelin, d\'ores et déjà émancipé 
+        d\'âgen 16 et qui a renoncé à la survivance de la charge de son père, reçoit de 
+        celui-ci un important acompte sur l’héritage maternel. Il a quitté la maison de la rue Saint-Honoré 
+        et demeure à présent rue de Thorigny, dans le quartier du Marais, non loin des Béjart16.');
+
+        $entityManager->persist($author);
+        $entityManager->flush();
+
+        var_dump('C est modifier');die;
+    }
 }

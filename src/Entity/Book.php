@@ -36,6 +36,34 @@ class Book
      */
     private $summary;
 
+
+//    ---------------------------------------------Relation de table---------------------------------------------------
+    // Relation de table
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books")
+     */
+    private $author;
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author): void
+    {
+        $this->author = $author;
+    }
+
+//    --------------------------------------------------------------------------------------------------------------
+
+
     public function getId(): ?int
     {
         return $this->id;

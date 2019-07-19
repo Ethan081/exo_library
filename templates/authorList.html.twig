@@ -21,6 +21,14 @@
                         <h2>Prenom : {{ element.firstName }}</h2>
                         <h3>Date de Naissance : {{ element.birthdate|localizeddate('none', 'none', null, null, 'd MMMM Y') }}</h3>
                         <p>Biographie :<br>{{ element.bio }}</p>
+                        <h4>Du meme Auteur :
+                        {# Je boucle pour affficher touts les livres associer a mon Auteur #}
+                        {% for book in element.books %}
+                            <a href="{{ path('bookShow', {'id':book.id}) }}">
+                                {{ book.title }} ,
+                            </a>
+                        {% endfor%}
+                        </h4>
                         <a href="{{ path('authorShow', {'id':element.id}) }}">Voir</a>
                     </div>
                 {% endfor %}

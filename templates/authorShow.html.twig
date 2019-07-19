@@ -8,6 +8,13 @@
                     <h2>Prenom : {{ author.firstName }}</h2>
                     <h3>Date de Naissance : {{ author.birthdate|localizeddate('none', 'none', null, null, 'd MMMM Y') }}</h3>
                     <p>Biographie :<br>{{ author.bio }}</p>
+                    <h4>Du meme Auteur :
+                        {% for book in author.books %}
+                            <a href="{{ path('bookShow', {'id':book.id}) }}">
+                                {{ book.title }} ,
+                            </a>
+                        {% endfor%}
+                    </h4>
                 </div>
             </section>
             <a href="{{ path('authorList')}}">List des Auteurs</a>

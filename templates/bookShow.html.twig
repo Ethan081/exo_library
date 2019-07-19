@@ -6,6 +6,12 @@
                 <div class="card">
                     <h1>Titre : {{ book.title() }}</h1>
                     <h2>Genre : {{ book.genre() }}</h2>
+                    <h3>Auteur :
+                        <a href="{{ path('authorShow', {'id':book.author.id})}}">
+                            {{ book.author.lastName }} {{ book.author.firstName }}
+                        </a>
+                    </h3>
+
                     <h3>Nombre de pages : {{ book.numberOfPages()}}</h3>
                     <p>Resumer :<br>{{ book.summary() }}</p>
                 </div>

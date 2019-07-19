@@ -7,10 +7,10 @@
             <div class="titre">
                 <h1>Les Livres</h1>
             </div>
-            <div class="search">
+            <div class="search pure-form">
                 <form action="{{ path('bookGenre') }}" method="get">
                     <input type="text" name="genre">
-                    <input type="submit">
+                    <button type="submit" class="pure-button pure-button-primary">Search</button>
                 </form>
             </div>
         </div>
@@ -20,6 +20,11 @@
             {% for element in books %}
                 <div class="card">
                     <h1>Titre : {{ element.title }}</h1>
+                    {# je viens verifier avec une condition si mon champ auteur de ma table livre est null ou pas.#}
+                    {% if  element.author%}
+                        {# je viens afficher le nom de l auteur  #}
+                        <h2>Auteur : {{ element.author.firstName }} {{ element.author.lastName }}</h2>
+                    {% endif%}
                     <h2>Genre : {{ element.genre }}</h2>
                     <h3>Nombre de pages : {{ element.numberOfPages}}</h3>
                     <p>Resumer :<br>{{ element.summary }}</p>

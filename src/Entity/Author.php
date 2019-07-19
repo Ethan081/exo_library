@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -40,6 +41,33 @@ class Author
      * @ORM\Column(type="text", nullable=true)
      */
     private $bio;
+//    ---------------------------------------------Relation de table---------------------------------------------------
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Book", mappedBy="author")
+     */
+    private $books;
+
+
+    // A chaque fois que j instancie ma class Author sa propriete $books devient un Array.
+    public function __construct()
+    {
+        //je declare ma propriete books en tant qu array
+        //car elle peut contenir plusieurs livres
+        //ArrayCollection se comporte comme un array(avec plus de possibiliter)
+        $this->books = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBooks()
+    {
+        return $this->books;
+    }
+
+
+//    --------------------------------------------------------------------------------------------------------------------
 
     public function getId(): ?int
     {
