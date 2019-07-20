@@ -1,0 +1,57 @@
+{% extends'base.html.twig' %}
+
+{% block content %}
+    <h1>Admin</h1>
+        <div>
+            <h1>les livres</h1>
+        </div>
+        <div class="pure-button pure-button-primary">
+            <a href="{{ path('adminFormAddBook_page') }}">Ajouter un livres</a>
+        </div>
+    <section class="section">
+        <div class="table">
+        {# liste de mes livres avec des bouton modifier #}
+            <table class="pure-table pure-table-bordered">
+                <tr>
+                    <td><h2>Titre</h2></td>
+                    <td><h2>Auteur</h2></td>
+                    <td><h2>Modifier</h2></td>
+                </tr>
+                {% for book in books %}
+                    <tr>
+                        <td><h3>{{ book.title }}</h3></td>
+                        <td><h3>{{ book.author.lastName }} {{ book.author.firstName }}</h3></td>
+                        <td class="pure-button pure-button-primary"><a href="{{ path('formBookUpdate_page', {id:book.id}) }}">Modifier</a></td>
+                    </tr>
+                {% endfor%}
+            </table>
+        </div>
+    </section>
+        <div>
+            <h1>les Auteurs</h1>
+        </div>
+        <div class="pure-button pure-button-primary">
+            <a href="{{ path('adminFormAddAuthor_page') }}">Ajouter un Auteur</a>
+        </div>
+    <section class="section">
+        <div class="table">
+            {# liste des auteurs avec un bouton modifier et ajouter un livre de l'auteur #}
+            <table class=" pure-table pure-table-bordered ">
+                <tr>
+                    <td><h2>Auteur</h2></td>
+                    <td><h2>Livres</h2></td>
+                    <td><h2>Modifier</h2></td>
+                </tr>
+                {% for author in authors %}
+                    <tr>
+                        <td><h3>{{ author.lastName }} {{ author.firstName }}</h3></td>
+                            {% for book in author.books %}
+                                <td><h3> {{ book.title }} ,</h3></td>
+                            {% endfor%}
+                        <td class="pure-button pure-button-primary"><a href="{{ path('formAuthorUpdate_page', {id:author.id}) }}">Modifier</a></td>
+                    </tr>
+                {% endfor%}
+            </table>
+        </div>
+    </section>
+{% endblock %}

@@ -84,15 +84,45 @@ h1,h2{
 .search{
     margin-left: 10px;
 }
+/*-----------Form-----------------------*/
 .container{
+
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 50%;
+
+
 }
+.inputAuthor ,.buttonAuthor{
+    width: 30%;
+    align-items: flex-start;
+}
+.inputAuthorTexte{
+    width: 50%;
+    height: 200px;
+}
+.lableAuthor, .buttonAuthor{
+    margin-top: 10px;
+}
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+    color: white;
+}
+
+td{
+
+   text-align: center;
+
+}
+
 
 
 /*-------------------------------------------------------------MEDIA-Q--------------------------------------------------------*/
 @media screen and (max-width: 640px) {
+    .inputAuthor ,.buttonAuthor, .inputAuthorTexte, .container{
+        width: 100%;
+    }
+
     .section{
         display: flex;
         justify-content: center;

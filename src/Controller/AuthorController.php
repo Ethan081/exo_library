@@ -25,7 +25,7 @@ class AuthorController extends AbstractController
         $authors = $authorRepository->findAll();
     //debug var_dum pour afficher ma variable $author.
     // dump($authors);die;
-        return $this->render('authorList.html.twig',
+        return $this->render('author/authorList.html.twig',
             [
                 'authors' => $authors
             ]
@@ -44,7 +44,7 @@ class AuthorController extends AbstractController
         $author = $authorRepository->find($id);
 
         //dump($author); die;
-        return $this->render('authorShow.html.twig',
+        return $this->render('author/authorShow.html.twig',
             [
                'author'=> $author
             ]
@@ -58,7 +58,7 @@ class AuthorController extends AbstractController
     {
         $authorlastName = $authorRepository->findByLastName();
 
-        return $this->render('authorLastName.html.twig',
+        return $this->render('author/authorLastName.html.twig',
             [
                 'authorlastName' => $authorlastName
 //                var_dump($authorlastName);die;
@@ -82,7 +82,7 @@ class AuthorController extends AbstractController
         $authorBio = $authorRepository->findAuthorByBio($bio);
 //        var_dump($authorBio);die;
         //je cree une vue pour afficher mes auteurs selectionnes
-        return $this->render('authorBio.html.twig',
+        return $this->render('author/authorBio.html.twig',
             [
                 'authorBio' => $authorBio
 

@@ -3,5 +3,41 @@
 {% block title %}Bienvenue{% endblock %}
 
 {% block content %}
-
+    <h1>Dernier Livres</h1>
+    <section class="section">
+        {% for element in books|slice(-4) %}
+            <div class="card">
+                <h1>Titre : {{ element.title }}</h1>
+                {# je viens verifier avec une condition si mon champ auteur de ma table livre est null ou pas.#}
+                {% if  element.author%}
+                    {# je viens afficher le nom de l auteur  #}
+                    <h2>Auteur : {{ element.author.firstName }} {{ element.author.lastName }}</h2>
+                {% endif%}
+                <h2>Genre : {{ element.genre }}</h2>
+                <h3>Nombre de pages : {{ element.numberOfPages}}</h3>
+                <p>Resumer :<br>{{ element.summary }}</p>
+                <a href="{{ path('bookShow', {'id':element.id}) }}">Voir</a>
+            </div>
+        {% endfor %}
+    </section>
+    <h1>Quelque Auteurs</h1>
+    <section class="section">
+        {% for element in authors|sort %}
+            <div class="card">
+                <h1>Nom : {{ element.lastName }}</h1>
+                <h2>Prenom : {{ element.firstName }}</h2>
+                <h3>Date de Naissance : {{ element.birthdate|localizeddate('none', 'none', null, null, 'd MMMM Y') }}</h3>
+                <p>Biographie :<br>{{ element.bio }}</p>
+                <h4>Du meme Auteur :
+                    {# Je boucle pour affficher touts les livres associer a mon Auteur #}
+                    {% for book in element.books %}
+                        <a href="{{ path('bookShow', {'id':book.id}) }}">
+                            {{ book.title }} ,
+                        </a>
+                    {% endfor%}
+                </h4>
+                <a href="{{ path('authorShow', {'id':element.id}) }}">Voir</a>
+            </div>
+        {% endfor %}
+    </section>
 {% endblock %}

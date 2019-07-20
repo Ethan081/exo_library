@@ -16,7 +16,7 @@ class AdminAuthorController extends AbstractController
 {
     //------------------------------------Je cree un form d ajout d Auteur-----------------------------------------
     /**
-     * @Route("/admin/author/formAuthorAdd", name="adminFormAuthor_page")
+     * @Route("/admin/author/formAuthorAdd", name="adminFormAddAuthor_page")
      */
     public function formAuthor(Request $request, EntityManagerInterface $entityManager )
     {
@@ -39,7 +39,7 @@ class AdminAuthorController extends AbstractController
 
         }
 
-        return $this->render('adminAuthorForm.html.twig',
+        return $this->render('admin/adminAuthorForm.html.twig',
             [
                 'authorFormView'=>$authorFormView
             ]
@@ -73,7 +73,7 @@ class AdminAuthorController extends AbstractController
 
 
         }
-        return $this->render('adminAuthorFormUpdate.html.twig',
+        return $this->render('admin/adminAuthorFormUpdate.html.twig',
             [
                 'authorFormUpdateView'=>$authorFormUpdateView
             ]

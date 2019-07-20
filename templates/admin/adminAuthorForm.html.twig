@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block title %}Auteur Form{% endblock %}
+
+{% block content %}
+    <div class="section">
+        {{ form_start(authorFormView, { 'attr': {'class': 'container'}}) }}
+
+            {{ form_label(authorFormView.firstName, 'Prenom', {'label_attr':{'class':'lableAuthor'}}) }}
+            {{ form_widget(authorFormView.firstName, { 'attr': {'class': 'inputAuthor'}}) }}
+
+            {{ form_label(authorFormView.lastName,  'Nom', {'label_attr':{'class':'lableAuthor'}}) }}
+            {{ form_widget(authorFormView.lastName,{ 'attr': {'class': 'inputAuthor'}}) }}
+
+            {{ form_label(authorFormView.birthdate, 'Date de Naissance', {'label_attr':{'class':'lableAuthor'}}) }}
+            {{ form_widget(authorFormView.birthdate,{ 'attr': {'class': 'inputAuthor'}}) }}
+
+            {{ form_label(authorFormView.deathdate,  'Date de Mort', {'label_attr':{'class':'lableAuthor'}}) }}
+            {{ form_widget(authorFormView.deathdate,{ 'attr': {'class': 'inputAuthor'}}) }}
+
+            {{ form_label(authorFormView.bio,   'Biographie', {'label_attr':{'class':'lableAuthor'}}) }}
+            {{ form_widget(authorFormView.bio,{ 'attr': {'class': 'inputAuthorTexte'}}) }}
+
+            {{ form_label(authorFormView.enregister, 'Ajouter', {'label_attr':{'class':'lableAuthor'}}) }}
+            {{ form_widget(authorFormView.enregister,{ 'attr': {'class': 'buttonAuthor pure-button button-success'}}) }}
+
+        {{ form_end(authorFormView) }}
+    </div>
+{% endblock %}

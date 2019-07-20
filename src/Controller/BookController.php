@@ -41,7 +41,7 @@ class BookController extends AbstractController
 
         //j affiche ma table Book
         //dump($books);die;
-        return $this->render('booksList.html.twig',
+        return $this->render('book/booksList.html.twig',
             [
                 'books'=>$books
             ]);
@@ -56,7 +56,7 @@ class BookController extends AbstractController
         $book = $bookRepository->find($id);
 
         //dump($book);die;
-        return $this->render('bookShow.html.twig',
+        return $this->render('book/bookShow.html.twig',
             [
                 'book'=>$book
             ]);
@@ -71,7 +71,7 @@ class BookController extends AbstractController
         $genre = $request->query->get('genre');
         $BookGenre = $bookRepository->findByGenre($genre);
 
-        return $this->render('bookGenre.html.twig',
+        return $this->render('book/bookGenre.html.twig',
         [
             'genre'=>$BookGenre
         ]);

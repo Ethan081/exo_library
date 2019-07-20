@@ -36,7 +36,7 @@ class AdminBookController extends AbstractController
             $entityManager->flush();
             var_dump('c est envoyer');die;
         }
-        return $this->render('adminBookForm.html.twig',
+        return $this->render('admin/adminBookForm.html.twig',
         [
             'bookFormView'=>$bookFormView
         ]
@@ -73,7 +73,7 @@ class AdminBookController extends AbstractController
 
 
         }
-        return $this->render('adminBookFormUpdate.html.twig',
+        return $this->render('admin/adminBookFormUpdate.html.twig',
             [
                 'bookFormUpdateView'=>$bookFormUpdateView
             ]
