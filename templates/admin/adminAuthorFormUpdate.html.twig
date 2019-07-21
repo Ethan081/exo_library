@@ -2,6 +2,11 @@
 {% block title %}Auteur Form Update{% endblock %}
 
 {% block content %}
+    <div class="wrapper">
+        <div class="les_auteurs">
+            <h1>Modifier les informations de l'Auteur</h1>
+        </div>
+    </div>
     <div class="section">
         {{ form_start(authorFormUpdateView, { 'attr': {'class': 'container'}}) }}
 
@@ -25,4 +30,10 @@
 
         {{ form_end(authorFormUpdateView) }}
     </div>
+    <div class="wrapper">
+        <div>
+            <div class="pure-button"><a href="{{ path('admin_page') }}">Retour Admin</a></div>
+        </div>
+    </div>
+
 {% endblock %}

@@ -93,26 +93,64 @@ h1,h2{
 
 
 }
-.inputAuthor ,.buttonAuthor{
+.inputAuthor, .buttonAuthor, .inputBook, .buttonBook{
     width: 30%;
     align-items: flex-start;
 }
-.inputAuthorTexte{
+.inputAuthorTexte, .inputBookTexte{
     width: 50%;
     height: 200px;
 }
-.lableAuthor, .buttonAuthor{
+.lableAuthor, .buttonAuthor, .lableBook, .buttonBook{
     margin-top: 10px;
 }
+
+/*-----------Bouton-----------------------*/
 .button-success {
     background: rgb(28, 184, 65); /* this is a green */
     color: white;
 }
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+    color: white;
 
-td{
+}
+.pure-button{
+    margin-bottom: 10px;
+    color: white;
+}
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
 
+/*-----------Table----------------------*/
+
+.row_champ{
+    background-color: aquamarine;
+}
+.champ_info, .champ_info_livre{
+    width: 150px;
    text-align: center;
-
+}
+.champ_info_livre{
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.les_livres, .les_auteurs{
+    font-family: 'Roboto', sans-serif;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+.admin_title{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
 }
 
 

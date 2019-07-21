@@ -29,9 +29,9 @@ class AdminBookController extends AbstractController
         {
             //Le formulaire recupere les infos
             //de la requete
-            $form->handleRequest($book);
+            $form->handleRequest($request);
             //Je persiste mes info de mon form.
-            $entityManager->persist($form);
+            $entityManager->persist($book);
             //J envoie les infos de mon form a ma db author.
             $entityManager->flush();
             var_dump('c est envoyer');die;

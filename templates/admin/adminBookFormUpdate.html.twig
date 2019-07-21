@@ -2,5 +2,37 @@
 {% block title %}Book Form Update{% endblock %}
 
 {% block content %}
-    {{ form(bookFormUpdateView) }}
+    <div class="wrapper">
+        <div class="les_livres">
+            <h1>Modifier les informations du livre</h1>
+        </div>
+    </div>
+    <div class="section">
+        {{ form_start(bookFormUpdateView, { 'attr': {'class': 'container'}}) }}
+
+        {{ form_label(bookFormUpdateView.title, 'Titre', {'label_attr':{'class':'lableBook'}}) }}
+        {{ form_widget(bookFormUpdateView.title, { 'attr': {'class': 'inputBook'}}) }}
+
+        {{ form_label(bookFormUpdateView.genre,  'Genre', {'label_attr':{'class':'lableBook'}}) }}
+        {{ form_widget(bookFormUpdateView.genre,{ 'attr': {'class': 'inputBook'}}) }}
+
+        {{ form_label(bookFormUpdateView.numberOfPages, 'Nombres de Pages', {'label_attr':{'class':'lableBook'}}) }}
+        {{ form_widget(bookFormUpdateView.numberOfPages,{ 'attr': {'class': 'inputBook'}}) }}
+
+        {{ form_label(bookFormUpdateView.summary,  'Resume', {'label_attr':{'class':'lableBook'}}) }}
+        {{ form_widget(bookFormUpdateView.summary,{ 'attr': {'class': 'inputBookTexte'}}) }}
+
+        {{ form_label(bookFormUpdateView.author, 'Auteur', {'label_attr':{'class':'lableBook'}}) }}
+        {{ form_widget(bookFormUpdateView.author,{ 'attr': {'class': 'inputBook'}}) }}
+
+        {{ form_label(bookFormUpdateView.enregistrer, 'Ajouter', {'label_attr':{'class':'lableBook'}}) }}
+        {{ form_widget(bookFormUpdateView.enregistrer,{ 'attr': {'class': 'buttonBook pure-button button-success'}}) }}
+
+        {{ form_end(bookFormUpdateView) }}
+    </div>
+    <div class="wrapper">
+        <div>
+            <div class="pure-button"><a href="{{ path('admin_page') }}">Retour Admin</a></div>
+        </div>
+    </div>
 {% endblock %}

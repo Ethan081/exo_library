@@ -2,6 +2,11 @@
 {% block title %}Auteur Form{% endblock %}
 
 {% block content %}
+    <div class="wrapper">
+        <div class="les_auteurs">
+            <h1>Ajouter un Auteur</h1>
+        </div>
+    </div>
     <div class="section">
         {{ form_start(authorFormView, { 'attr': {'class': 'container'}}) }}
 
@@ -24,5 +29,10 @@
             {{ form_widget(authorFormView.enregister,{ 'attr': {'class': 'buttonAuthor pure-button button-success'}}) }}
 
         {{ form_end(authorFormView) }}
+    </div>
+    <div class="wrapper">
+        <div>
+            <div class="pure-button"><a href="{{ path('admin_page') }}">Retour Admin</a></div>
+        </div>
     </div>
 {% endblock %}
