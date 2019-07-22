@@ -15,11 +15,23 @@
                     <div class="logoHeader">
                         <a href="{{ path('index_page') }}"><img src="{{ asset('assets/images/logo.jpg') }}" alt="logo" class="'resp logo"></a>
                     </div>
+                    <div class="connected">
+                        {% if app.user %}
+                            <h3>{{ app.user.username }}</h3>
+                        {% endif %}
+                    </div>
                     <div class="boite">
                         <div class="button"><a href="{{ path('bookList') }}">Livres</a></div>
                         <div class="button"><a href="{{ path('authorList') }}">Auteurs</a></div>
                         <div class="button"><a href="{{ path('contact_page') }}">Contacts</a></div>
-                        <div class="button"><a href="{{ path('admin_page') }}">SignIn</a></div>
+                        {% if app.user %}
+                            <div class="button"><a href="{{ path('admin_page') }}">Admin</a></div>
+                            <div class="button"><a href="{{ path('fos_user_security_logout') }}">LogOut</a></div>
+
+                        {% else %}
+                            <div class="button"><a href="{{ path('admin_page') }}">LogIn</a></div>
+                        {% endif %}
+
                     </div>
 
                 </div>

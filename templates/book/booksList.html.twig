@@ -19,6 +19,11 @@
         <section class="section">
             {% for element in books %}
                 <div class="card">
+                    <div class="book_image">
+                        {% if  element.pictures %}
+                            <img src="{{ element.pictures.url }}" alt="" class="resp">
+                        {% endif%}
+                    </div>
                     <h1>Titre : {{ element.title }}</h1>
                     {# je viens verifier avec une condition si mon champ auteur de ma table livre est null ou pas.#}
                     {% if  element.author%}

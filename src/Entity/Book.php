@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -40,6 +41,9 @@ class Book
 //    ---------------------------------------------Relation de table---------------------------------------------------
     // Relation de table
 
+
+    //Relation avec la table Author.
+
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books")
      */
@@ -60,6 +64,31 @@ class Book
     {
         $this->author = $author;
     }
+
+    //Relation avec la table Pictures.
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Pictures")
+     */
+    private $pictures;
+
+    /**
+     * @return mixed
+     */
+    public function getPictures()
+    {
+        return $this->pictures;
+    }
+
+    /**
+     * @param mixed $pictures
+     */
+    public function setPictures($pictures = null)
+    {
+        $this->pictures = $pictures;
+    }
+
+
+
 
 //    --------------------------------------------------------------------------------------------------------------
 

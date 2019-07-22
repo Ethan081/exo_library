@@ -9,6 +9,7 @@ body{
     background-color: #f1f1f1;
 
 }
+
 a {
     text-decoration: none;
     color: blue;
@@ -152,11 +153,30 @@ h1,h2{
     font-family: 'Roboto', sans-serif;
     margin-left: 20px;
 }
+/*-----------Image----------------------*/
+.resp{
+    width: 100%;
+}
+.book_image{
+    width: 100%;
 
+}
+/*-------------------Admin-----------------*/
+.connected{
+    color: #ffcc00;
+    font-family: 'Open Sans', sans-serif;
+}
 
 
 /*-------------------------------------------------------------MEDIA-Q--------------------------------------------------------*/
 @media screen and (max-width: 640px) {
+    body{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+
+    }
     .inputAuthor ,.buttonAuthor, .inputAuthorTexte, .container{
         width: 100%;
     }
@@ -210,6 +230,19 @@ h1,h2{
     }
     .search{
         display: none;
+    }
+    .champ_info, .champ_info_livre{
+        width:70px;
+        font-size: 16px;
+    }
+    .champ_info_livre{
+        width:90px;
+    }
+    h2{
+        font-size: 16px;
+    }
+    h3{
+        font-size: 14px;
     }
 
 
