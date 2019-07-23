@@ -34,7 +34,8 @@ class AdminBookController extends AbstractController
             $entityManager->persist($book);
             //J envoie les infos de mon form a ma db author.
             $entityManager->flush();
-            var_dump('c est envoyer');die;
+            //Message qui m indique que c est ajouter
+            //var_dump('C\'est enregistrer' );die;
         }
         return $this->render('admin/adminBookForm.html.twig',
         [

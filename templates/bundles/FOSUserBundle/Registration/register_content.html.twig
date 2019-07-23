@@ -1,0 +1,22 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="pure-form pure-form-stacked">
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+    {{ form_label(form.email, 'Email') }}
+    {{ form_widget(form.email, { 'attr': {'class': 'pure-form'}}) }}
+
+    {{ form_label(form.username, 'Username') }}
+    {{ form_widget(form.username) }}
+
+    {{ form_label(form.plainPassword.first, 'Password') }}
+    {{ form_widget(form.plainPassword.first) }}
+    {{ form_label(form.plainPassword.second, 'Confirm Password') }}
+    {{ form_widget(form.plainPassword.second) }}
+
+    <div>
+        <input class="pure-button pure-button-primary" type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+
+    {{ form_end(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+</div>

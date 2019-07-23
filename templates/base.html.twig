@@ -24,7 +24,8 @@
                         <div class="button"><a href="{{ path('bookList') }}">Livres</a></div>
                         <div class="button"><a href="{{ path('authorList') }}">Auteurs</a></div>
                         <div class="button"><a href="{{ path('contact_page') }}">Contacts</a></div>
-                        {% if app.user %}
+                        <div class="button"><a href="{{ path('fos_user_registration_register') }}">SignIn</a></div>
+                        {% if is_granted('ROLE_USER') %}
                             <div class="button"><a href="{{ path('admin_page') }}">Admin</a></div>
                             <div class="button"><a href="{{ path('fos_user_security_logout') }}">LogOut</a></div>
 
