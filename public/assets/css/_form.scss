@@ -1,0 +1,20 @@
+/*-----------Form-----------------------*/
+.container{
+
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+
+}
+.inputAuthor, .buttonAuthor, .inputBook, .buttonBook{
+  width: 30%;
+  align-items: flex-start;
+}
+.inputAuthorTexte, .inputBookTexte{
+  width: 50%;
+  height: 200px;
+}
+.lableAuthor, .buttonAuthor, .lableBook, .buttonBook{
+  margin-top: 10px;
+}

@@ -1,0 +1,44 @@
+.section{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  background :floralwhite;
+  flex-wrap: wrap;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  margin: 0 auto;
+}
+.card{
+
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  cursor: pointer;
+  background :whitesmoke;
+  padding: 10px;
+  font-family: $font_texte;
+  margin: 10px;
+}
+h1,h2{
+  font-family: $font_title;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+a:hover{
+  color: deepskyblue;
+}
+
+
+.titre{
+  text-align: center;
+}
+.titreSearch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

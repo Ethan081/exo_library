@@ -1,0 +1,27 @@
+/*-----------Table----------------------*/
+
+.row_champ{
+  background-color: aquamarine;
+}
+.champ_info, .champ_info_livre{
+  width: 150px;
+  text-align: center;
+}
+.champ_info_livre{
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.les_livres, .les_auteurs{
+  font-family: $font_title;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+.admin_title{
+  font-family: $font_title;
+  margin-left: 20px;
+}
